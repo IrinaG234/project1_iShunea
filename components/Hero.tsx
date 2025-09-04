@@ -32,11 +32,11 @@ const Hero = () => {
                 src={"/hero.png"}
                 alt="hero"
                 fill
-                priority
                 className='object-contain'
                 />
+                <div className="hero__image-overlay" />   
             </div>
-            <div className="hero__image-overlay" />
+            
         </div>
     </div>
   )
