@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import { CarProps } from '@/types';
 import CustomButton from './CustomButton';
-import { calculateCarRent } from '@/utils';
+import { calculateCarRent, generateCarImageUrl } from '@/utils';
 import CarDetails from './CarDetails';
 interface CarCardProps{
     car: CarProps;
@@ -29,20 +29,20 @@ const CarCard = ({car}: CarCardProps) => {
         <p className="flex mt-6 text-[32px] 
         font-extrabold">
             <span className="self-start text-[14px]
-            font-semibold">
+             font-semibold">
                $
             </span>
             {carRent}
             <span className="self-end text-[14px]
             font-medium">
-               /end
+               /day
             </span>
         </p>
 
         <div className='relative w-full h-40 my-3
         object-contain'>
             <Image 
-            src="/hero.png " 
+            src={generateCarImageUrl(car)} 
             alt="car model"
             fill priority
             className="object-contain "/>
@@ -54,7 +54,7 @@ const CarCard = ({car}: CarCardProps) => {
                 <div className="flex flex-col justify-center
                 items-center gap-2">
                     <Image
-                    src="steering-wheel.svg" 
+                    src="/steering-wheel.svg" 
                     width={20}
                     height={20}
                     alt="steering wheel"/>
@@ -65,7 +65,7 @@ const CarCard = ({car}: CarCardProps) => {
                 <div className="flex flex-col justify-center
                 items-center gap-2">
                     <Image
-                    src="tire.svg" 
+                    src="/tire.svg" 
                     width={20}
                     height={20}
                     alt="tire"/>
@@ -76,7 +76,7 @@ const CarCard = ({car}: CarCardProps) => {
                 <div className="flex flex-col justify-center
                 items-center gap-2">
                     <Image
-                    src="gas.svg" 
+                    src="/gas.svg" 
                     width={20}
                     height={20}
                     alt="gas"/>
