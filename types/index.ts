@@ -66,5 +66,5 @@ export interface ShowMoreProps {
 export interface CustomFilterProps {
     title: string;
     options: OptionProps[];
-    setFilter: (filter: string) => void;
+   
 }
